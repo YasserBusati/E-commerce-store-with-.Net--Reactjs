@@ -84,7 +84,6 @@ StyleCopReport.xml
 *.iobj
 *.pch
 *.pdb
-*.ipdb
 *.pgc
 *.pgd
 *.rsp
@@ -482,3 +481,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+*.db
+*.db-shm
+*.db-wal
