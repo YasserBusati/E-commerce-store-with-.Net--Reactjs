@@ -9,11 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
     {
         option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
+    builder.Services.AddCors();
 }
 
 var app = builder.Build();
 
 {
+    app.UseCors(option =>
+    {
+        option.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+    });
+
     app.MapControllers();
 
     var scop = app.Services.CreateScope();
